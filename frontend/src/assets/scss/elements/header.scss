@@ -1,0 +1,163 @@
+.header {
+  position: fixed;
+  z-index: 40000;
+  width: 100%;
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 20px;
+  background-color: var(--header-bg-color);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+  max-width: inherit;
+
+  .menu_show_toggle {
+    border-width: 1px;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px black;
+    z-index: 4000;
+    position: relative;
+  }
+
+  .artist_search_wrapper {
+    position: relative;
+    display: none;
+    .artist_search {
+      flex: 1;
+      background-color: var(--search-bg-color);
+      border: solid 1px var(--search-border-color);
+      height: 35px;
+      color: var(--search-input-color);
+      outline: none;
+      border-radius: 10px;
+      padding: 0 5px;
+      transition: background-color 0.05s ease;
+      box-shadow: 0 0 3px rgba(24, 24, 24, 0.596),
+        0 0 0 2px rgb(70, 70, 70) inset;
+      &:focus {
+        border-color: var(--color-gray-20);
+      }
+    }
+
+    .artist_search_clear {
+      position: absolute;
+      opacity: 0.7;
+      color: var(--clear-search-color);
+      right: 5px;
+      top: 7px;
+      filter: drop-shadow(0px 2px 2px rgb(59, 59, 59));
+      cursor: pointer;
+      &:hover {
+        color: var(--clear-search-hover-color);
+      }
+    }
+  }
+}
+
+.header_links {
+  display: flex;
+  gap: 1.7rem;
+
+  .header_link {
+    background-image: linear-gradient(
+      var(--color-gray-20) 0%,
+      var(--color-gray-10) 100%
+    );
+    border-radius: 10px;
+    box-shadow: 0 2px 2px 0px var(--color-gray-10),
+      0 0 0 2px rgb(70, 70, 70) inset;
+    padding: 8px 15px;
+    display: flex;
+    gap: 0.4rem;
+    justify-content: center;
+    align-items: center;
+    color: $color-font-dark;
+    > span {
+      display: none;
+
+      text-decoration: underline solid transparent;
+      text-underline-offset: 3px;
+    }
+
+    > svg,
+    span {
+      transition: all 0.2s ease-in-out;
+    }
+
+    &:hover > span {
+      text-decoration-color: var(--sun-icon-color);
+    }
+    &.active {
+      > svg {
+        color: var(--sun-icon-color);
+      }
+      > span {
+        text-decoration-color: var(--sun-icon-color);
+      }
+    }
+  }
+}
+
+.theme_toggler {
+  display: flex;
+  gap: 0.1rem;
+  align-items: center;
+  margin-right: 0.4rem;
+  > svg:first-child {
+    color: var(--sun-icon-color);
+  }
+  > svg {
+    color: var(--moon-icon-color);
+    width: 19px;
+    height: 19px;
+  }
+  > input[type='checkbox'] {
+    margin: 8px;
+    cursor: pointer;
+    position: relative;
+    width: 35px;
+    height: 17px;
+    appearance: none;
+    background: linear-gradient(0deg, #aaaaaa, #505050);
+    outline: none;
+    border-radius: 20px;
+    box-shadow: 0 0 0 3px var(--color-gray-40), 0 0 0 4px var(--color-gray-30),
+      inset 0 0 10px rgb(12, 12, 12);
+  }
+  > input:checked[type='checkbox']:checked {
+    background: linear-gradient(0deg, #00111f, #010627);
+  }
+
+  > input[type='checkbox']:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 17px;
+    height: 17px;
+    background: linear-gradient(0deg, #000, #6b6b6b);
+    border-radius: 20px;
+    box-shadow: 0 0 0 1px #232323;
+    transform: scale(0.98, 0.96);
+    transition: 0.5s;
+  }
+
+  > input:checked[type='checkbox']:before {
+    left: 21px;
+  }
+
+  > input:checked[type='checkbox']:after {
+    left: 110px;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .header {
+    .artist_search_wrapper {
+      display: inline-block;
+    }
+     >.header_links>.header_link>span {
+  display: inline-block;
+     }
+  }
+}

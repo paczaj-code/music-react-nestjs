@@ -1,0 +1,95 @@
+.sidebar_wrapper {
+  position: fixed;
+  width: 25rem;
+  margin-top: calc(var(--header-height) + 0.1rem);
+  margin-left: -29rem;
+  padding-bottom: 20px;
+  background-color: var(--sidebar-bg-color);
+  transition: margin-left 0.3s ease;
+  &.visible {
+    margin-left: 0;
+    z-index: 3000;
+  }
+}
+
+.artist-list {
+  width: 25rem;
+  position: fixed;
+  height: calc(100% - var(--header-height));
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  overflow-y: auto;
+  background-color: var(--sidebar-bg-color);
+  box-shadow: 2px 0 3px hsla(0, 0%, 9%, 0.637);
+  .artist_list_empty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    gap: 3px;
+    > h6 {
+      margin: 0;
+    }
+    > svg {
+      color: hsl(19, 83%, 45%);
+      filter: drop-shadow(0 1px 2px hsla(0, 0%, 0%, 0.212));
+    }
+  }
+
+  &-item {
+    font-family: Rubik, Arial, Helvetica, sans-serif;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+    padding: 8px 5px 8px 15px;
+    border-bottom: 1px solid var(--sidebar-item-border-color);
+    cursor: pointer;
+    position: relative;
+
+    &.active {
+      background: linear-gradient(
+        to right top,
+        var(--color-primary-60) 10%,
+        var(--color-primary-50) 60%,
+        var(--color-primary-40) 100%
+      );
+      color: var(--color-gray-90);
+
+      &::before,
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        background-color: var(--color-primary-30);
+        height: 2px;
+        width: 100%;
+        left: 0;
+      }
+      &::before {
+        top: 0;
+        box-shadow: 0 2px 5px black;
+      }
+
+      &::after {
+        bottom: 0;
+        box-shadow: 0 -2px 5px black;
+      }
+    }
+    // TODO color
+    > mark {
+      background-color: var(--color-primary-10);
+      border-radius: 3px;
+      box-shadow: 0 0px 0px 1px var(--color-primary-30),
+        0 0 2px 1px var(--color-primary-70);
+    }
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .sidebar_wrapper {
+    position: relative;
+    margin-left: 0;
+  }
+}

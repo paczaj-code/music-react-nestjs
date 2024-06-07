@@ -1,0 +1,37 @@
+.youtube_section {
+  //overflow: hidden;
+  //position: relative;
+  //max-width: 90vw;
+  //overflow: auto;
+}
+.youtube_elements {
+  padding-top:2rem;
+}
+.youtube_image_wrapper {
+  border-radius: 10px;
+  overflow: hidden !important;
+  box-shadow: 0 3px 3px black !important;
+  border: solid 2px var(--color-gray-20);
+  cursor: pointer;
+    min-width: 250px !important;
+  >img {
+
+  }
+
+}
+
+.youtube_elements {
+  display: flex;
+  //width: auto;
+  //max-width: 90vw;
+  //flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 20px;
+}
+
+
+@media only screen and (min-width: 769px) {
+ .youtube_elements {
+flex-wrap: wrap;
+ }
+ }

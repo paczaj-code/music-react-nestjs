@@ -1,0 +1,22 @@
+.backdrop {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: hsla(205deg, 25%, 3%, 0.57);
+  backdrop-filter: blur(7px);
+}
+.backdrop.backdrop-modal {
+  z-index: 2000;
+  position: fixed;
+}
+.backdrop.backdrop-loader {
+  z-index: 2000;
+  position: absolute;
+}
+.backdrop.backdrop-sidebar {
+  z-index: 2000;
+  position: fixed;
+}
+
+/*# sourceMappingURL=backdrop.css.map */

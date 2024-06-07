@@ -1,0 +1,100 @@
+$color-font: hsl(0, 1%, 17%);
+$color-font-dark: hsl(0, 0%, 81%);
+$app-bg-image: url('../images/billie-holiday.png');
+$app-bg-image-dark: url('../images/assault.png');
+$app-bg-color: hsla(199, 8%, 90%, 0.996);
+$app-bg-color-dark: hsla(245, 20%, 12%, 0.973);
+$body-bg-color: hsla(199, 8%, 70%, 0.996);
+$body-bg-color-dark: hsla(259, 8%, 11%, 0.996);
+$header-height: 5rem;
+
+:root {
+  // layout styles
+  --body-bg-color: #{$body-bg-color};
+  --app-bg-image: #{$app-bg-image};
+  --app-bg-color: #{$app-bg-color};
+  --font-color: #{$color-font};
+
+  // header ane header elements styles
+  --header-height: #{$header-height};
+  --header-bg-color: hsl(240, 8%, 27%);
+  // --theme-toggler-shadow-1: hsl(0, 2%, 68%);
+  // --theme-toggler-shadow-2: hsl(0, 0%, 51%);
+  --search-bg-color: var(--color-gray-20);
+  --search-focus-bg-color: var(--color-gray-30);
+  --search-input-color: #{$color-font-dark};
+  --search-border-color: var(--color-gray-40);
+  --clear-search-color: var(--color-gray-70);
+  --clear-search-hover-color: hsl(12, 70%, 67%);
+  --sun-icon-color: hsl(29, 100%, 50%);
+  --moon-icon-color: hsl(0, 0%, 67%);
+
+  --title-text-shadow-color: var(--color-gray-50);
+  --artist-metadats-wrapper-color-1: var(--color-gray-70);
+  --artist-metadats-wrapper-color-2: var(--color-gray-80);
+  --artist-metadats-wrapper-border-color: var(--color-gray-50);
+  --artist-metadata-icon-color: var(--color-primary-50);
+  // sidebar styles
+  --sidebar-bg-color: hsl(180, 1%, 70%);
+  --sidebar-item-border-color: var(--color-gray-50);
+  --active-sidebar-item-shadow-color: var(--color-primary-80);
+
+  --divider-color: var(--color-gray-70);
+
+  --color-primary-0: #bfbfcc;
+  --color-primary-10: #a1a0b3;
+  --color-primary-20: #83839a;
+  --color-primary-30: #666783;
+  --color-primary-40: #4a4b6b;
+  --color-primary-50: #2f3255;
+  --color-primary-60: #292c49;
+  --color-primary-70: #24253d;
+  --color-primary-80: #1e1f32;
+  --color-primary-90: #191927;
+  --color-primary-100: #13131c;
+
+  --color-gray-0: hsl(0, 0%, 0%);
+  --color-gray-10: hsl(0, 0%, 10%);
+  --color-gray-20: hsl(0, 0%, 20%);
+  --color-gray-30: hsl(0, 0%, 30%);
+  --color-gray-40: hsl(0, 0%, 40%);
+  --color-gray-50: hsl(0, 0%, 50%);
+  --color-gray-60: hsl(0, 0%, 60%);
+  --color-gray-70: hsl(0, 0%, 70%);
+  --color-gray-80: hsl(0, 0%, 80%);
+  --color-gray-90: hsl(0, 0%, 90%);
+  --color-gray-100: hsl(0, 0%, 100%);
+
+  .dark {
+    // layout dark styles
+    --body-bg-color: #{$body-bg-color-dark};
+    --app-bg-image: #{$app-bg-image-dark};
+    --app-bg-color: #{$app-bg-color-dark};
+    --font-color: #{$color-font-dark};
+
+    // sidebar dark styles
+    --sidebar-bg-color: hsl(247, 10%, 14%);
+    --sidebar-item-border-color: var(--color-gray-20);
+    --active-sidebar-item-shadow-color: var(--color-primary-30);
+
+    --divider-color: var(--color-gray-30);
+
+    --title-text-shadow-color: var(--color-gray-10);
+    --artist-metadats-wrapper-color-1: var(--color-gray-10);
+    --artist-metadats-wrapper-color-2: var(--color-gray-20);
+    --artist-metadats-wrapper-border-color: var(--color-gray-40);
+    --artist-metadata-icon-color: var(--color-gray-40);
+
+    --color-primary-0: #c3b9bb;
+    --color-primary-10: #a6989b;
+    --color-primary-20: #8a787c;
+    --color-primary-30: #6f595e;
+    --color-primary-40: #553c42;
+    --color-primary-50: #3b2128;
+    --color-primary-60: #331d23;
+    --color-primary-70: #2c1a1e;
+    --color-primary-80: #24161a;
+    --color-primary-90: #1d1315;
+    --color-primary-100: #170e10;
+  }
+}

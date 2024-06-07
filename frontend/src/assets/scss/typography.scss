@@ -1,0 +1,49 @@
+html {
+  font-size: 10px;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: 'Rubik', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 400;
+}
+
+$hSize: 5rem;
+@each $h in h1, h2, h3, h4, h5, h6 {
+  #{$h} {
+    font-size: $hSize;
+  }
+
+  $hSize: $hSize - 0.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+.heading {
+  font-family: 'Rubik', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 400;
+}
+
+.heading {
+  &-bold {
+    font-weight: 700;
+  }
+}
+
+.section_title {
+  display: flex;
+  gap:1rem;
+  margin-block: 0.4rem;
+  //border: solid 1px black;
+  //justify-content: center;
+  align-items: center;
+  font-family: 'Rubik', Tahoma, Geneva, Verdana, sans-serif;
+  &>svg{
+  height: 40px;
+    width: 40px;
+
+}
+}

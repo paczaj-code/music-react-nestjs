@@ -1,0 +1,56 @@
+@import './variables';
+@import './reset.scss';
+@import './layout.scss';
+@import './typography.scss';
+
+@import './elements/header.scss';
+@import './elements/sidebar.scss';
+@import './elements/loaders.scss';
+@import './elements/button.scss';
+@import './elements/modal.scss';
+@import './elements/backdrop.scss';
+@import './pages/artists.scss';
+@import './pages/youtube.scss';
+@import './pages/releases.scss';
+@import './pages/homepage.scss';
+
+body {
+  font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  background-color: var(--body-bg-color);
+  color: var(--font-color);
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: radial-gradient(
+    ellipse,
+    var(--color-primary-30),
+    var(--color-primary-70)
+  );
+  border-radius: 15px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--color-gray-80);
+  box-shadow: 0 0 5px black inset;
+}
+
+body.dark {
+  ::-webkit-scrollbar-track {
+    background-color: var(--color-gray-20);
+    box-shadow: 0 0 5px black inset;
+  }
+
+  &::-webkit-scrollbar-thumb,
+  ::-webkit-scrollbar-thumb {
+    background: radial-gradient(
+      ellipse,
+      var(--color-primary-20),
+      var(--color-primary-50)
+    );
+    border-radius: 5px;
+  }
+}

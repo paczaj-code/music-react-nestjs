@@ -1,0 +1,181 @@
+.artist_name {
+  > h2 {
+    font-size: 2.9rem;
+    font-weight: bolder;
+    text-shadow: 1px 1px 1px var(--title-text-shadow-color);
+    margin: 0;
+    padding: 0;
+    line-height: 3.8rem;
+  }
+}
+
+
+.artist_info {
+  margin-top: 20px;
+  display: block;
+
+  overflow: hidden;
+
+  transition: all 0.3s ease;
+  >.artists_wiki_info {
+    margin-top: 20px;
+  }
+
+  .artists_metadata {
+    min-width: 280px;
+
+    border-radius: 20px;
+    border: dotted 2px var(--artist-metadats-wrapper-border-color);
+    grid-column: 2/-1;
+
+    > ul {
+      margin: 0;
+      padding: 0;
+
+      > .artists_metadata_item_wrapper {
+        display: grid;
+        gap: 0.6rem;
+        grid-template-columns: 50px 1fr;
+        grid-template-rows: 1fr;
+        padding: 5px 2px;
+
+        border-bottom: 2px dotted var(--artist-metadats-wrapper-border-color);
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        > .artists_metadata_item-icon {
+          grid-area: 1/1/1/2;
+          align-self: center;
+          color: var(--artist-metadata-icon-color);
+          filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.4));
+
+        }
+
+        > .artists_metadata_element {
+          grid-area: 1/2/2/3;
+
+          > .artists_metadata_element-label {
+            font-size: 1.3rem;
+            font-weight: bold;
+          }
+
+          > .artists_metadata_element-children {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: start;
+            gap: 5px;
+
+            &.tags {
+              gap: 5px;
+
+              > .tag {
+                background: linear-gradient(
+                                hsl(204, 99%, 42%),
+                                hsl(204, 98%, 27%)
+                );
+                border-radius: 9px;
+                padding: 2px 6px;
+                font-size: 1.3rem;
+                box-shadow: 0 0px 4px hsla(0, 0%, 0%, 0.637);
+                color: $color-font-dark;
+                display: flex;
+                align-items: center;
+                gap: 3px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .artists_wiki_info_wrapper {
+    grid-area: 1 / 1 / 2 / 2;
+    overflow: hidden;
+
+    > .artists_wiki_info {
+      overflow: hidden;
+      transition: max-height 0.4s ease-in-out;
+    }
+  }
+}
+
+.wiki_image_wrapper {
+  margin: 0 20px 0 10px;
+  border-radius: 10px;
+  float: left;
+  overflow: hidden;
+  position: relative;
+  display: inline-table;
+  transition: max-height 0.4s ease-in-out;
+
+
+  > img {
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.9), 0 0 3px black inset;
+    border-radius: 10px;
+    border: solid var(--color-gray-40) 3px;
+  }
+
+  > figcaption {
+    display: table-caption;
+    caption-side: bottom;
+    font-size: 1.5rem;
+    font-style: italic;
+    opacity: 0.8;
+    padding: 5px;
+  }
+}
+
+.wiki_info_wrapper {
+  line-height: 2.4rem;
+}
+
+.artist_info_buttons {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0;
+  padding-inline: 0px;
+
+  .artist_info_button {
+    > svg {
+      filter: drop-shadow(0px 1px 2px black);
+    }
+  }
+}
+
+.divider {
+  border-color: transparent;
+  border-bottom-color: var(--divider-color);
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  margin: 0;
+
+}
+
+
+@media only screen and (min-width: 769px) {
+  .artist_name {
+    > h2 {
+      font-size: 3.4rem;
+
+    }
+  }
+  .artist_info {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: flex-start;
+    overflow: hidden;
+
+    transition: all 0.3s ease;
+
+    >.artists_wiki_info {
+    margin-top: 0;
+  }
+    }
+}

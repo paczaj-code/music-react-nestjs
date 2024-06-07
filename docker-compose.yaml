@@ -1,0 +1,50 @@
+version: '3.8'
+services:
+  database:
+    env_file: .env
+    container_name: paczaj-music-db
+    restart: unless-stopped
+    image: postgres:14-alpine
+    ports:
+      - ${HOST_PORT}:5432
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+      TZ: ${TIMEZONE}
+    volumes:
+      - ./db_data:/var/lib/postgresql/data
+  backend:
+    build: 
+      context: .
+      dockerfile: backend.Dockerfile
+    container_name: paczaj-music-backend 
+    environment:
+      - DB_NAME=${POSTGRES_DB}
+      - DB_USER=${POSTGRES_USER}
+      - DB_PASSWORD=${POSTGRES_PASSWORD}
+      - DB_HOST=paczaj-music-db
+      - DB_PORT=5432
+    ports: 
+      - 3000:3000
+    restart: unless-stopped
+    volumes:
+      - ./backend:/app  
+    command: >
+      yarn run start:dev
+    depends_on:
+      - database
+  frontend:
+    build: 
+      context: .
+      dockerfile: frontend.Dockerfile
+    container_name: paczaj-music-frontend
+    ports: 
+      - 5174:5173
+    restart: unless-stopped
+    volumes:
+      - ./frontend:/app
+    command: >
+      yarn run dev
+    # depends_on:
+    #   - backend

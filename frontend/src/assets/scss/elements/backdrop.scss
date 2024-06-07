@@ -1,0 +1,21 @@
+.backdrop {
+ inset: 0;
+  background-color: hsla(205, 25%, 3%, 0.57);
+  backdrop-filter: blur(7px);
+  z-index: 30;
+
+  &.backdrop-modal {
+    //z-index: 2000;
+    position: fixed;
+  }
+
+  &.backdrop-loader {
+    //z-index: 2000;
+    position: absolute;
+  }
+
+  &.backdrop-sidebar{
+    //z-index: 2000;
+    position: fixed;
+  }
+}

@@ -1,0 +1,123 @@
+.section_releases > .section_content {
+  display: flex;
+  gap: 2rem;
+  max-width: 89vw;
+  overflow-x: auto;
+}
+.section_releases > .section_content > .release_wrapper {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  cursor: pointer;
+}
+.section_releases > .section_content > .release_wrapper > .release_image_wrapper {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 5px black;
+}
+.section_releases > .section_content > .release_wrapper > .release_image_wrapper > img {
+  max-width: 200px;
+  min-width: 200px;
+  height: 200px;
+  display: block;
+}
+.section_releases > .section_content > .release_wrapper > .release_image_wrapper.error {
+  display: none !important;
+}
+.section_releases > .section_content > .release_wrapper > .release_info_wrapper {
+  padding: 5px 0;
+  max-width: 200px;
+}
+.section_releases > .section_content > .release_wrapper > .release_info_wrapper > .release_year {
+  font-size: 1.5rem;
+  font-weight: bold;
+  opacity: 0.9;
+  text-shadow: 1px 1px 2px rgba(20, 20, 20, 0.753);
+}
+.section_releases > .section_content > .release_wrapper > .release_info_wrapper > .release_title {
+  font-weight: bold;
+  font-size: 1.7rem;
+}
+
+.image_no_available,
+.image_loading {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10px;
+  background: linear-gradient(to bottom, var(--color-gray-20), var(--color-gray-10));
+  box-shadow: 0 4px 5px black;
+  color: var(--color-gray-90);
+}
+.image_no_available > svg,
+.image_loading > svg {
+  filter: drop-shadow(0 4px 4px rgb(78, 78, 78));
+}
+
+.image_loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 30;
+  background: linear-gradient(to left, var(--color-gray-60), var(--color-gray-30), var(--color-gray-10));
+  background-size: 250% 100%;
+  -webkit-animation: Animation 1s ease-in-out infinite alternate;
+  animation: Animation 1s ease-in-out infinite alternate;
+}
+.image_loading > svg {
+  -webkit-animation: svgAnimation 1s ease-in-out infinite alternate;
+  animation: svgAnimation 1s ease-in-out infinite alternate;
+}
+
+@media only screen and (min-width: 769px) {
+  .section_releases > .section_content {
+    flex-wrap: wrap;
+  }
+  .section_releases > .section_content > .release_wrapper > .release_image_wrapper > img {
+    max-width: 250px;
+    min-width: 250px;
+    height: 250px;
+  }
+  .image_no_available,
+  .image_loading {
+    width: 250px;
+    height: 250px;
+  }
+}
+@-webkit-keyframes Animation {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+}
+@keyframes Animation {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+@keyframes svgAnimation {
+  0% {
+    scale: 0.9;
+  }
+  100% {
+    scale: 1.1;
+  }
+}
+@-webkit-keyframes svgAnimation {
+  0% {
+    scale: 0.9;
+  }
+  100% {
+    scale: 1.1;
+  }
+}
+
+/*# sourceMappingURL=releases.css.map */
