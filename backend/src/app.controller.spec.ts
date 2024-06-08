@@ -38,9 +38,6 @@ describe('AppController', () => {
       const test = await appController.getRandomYT('10');
       expect(appService.getRandomYT).toHaveBeenCalled();
       expect(test.id).toEqual('1');
-      // console.log(test);
-
-      // expect(appController.getRandomYT).toHaveBeenCalledTimes(1);
     });
   });
 });

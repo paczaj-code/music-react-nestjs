@@ -2,6 +2,8 @@ import { Controller, Get, Param } from '@nestjs/common';
 import { AppService } from './app.service';
 import { CrawlerService } from './wsc.service';
 import { IArtistData } from './app.service';
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+require('dotenv').config();
 
 @Controller()
 export class AppController {
@@ -10,17 +12,18 @@ export class AppController {
     private readonly wsc: CrawlerService,
   ) {}
 
-  @Get('/random-youtube/:qty')
+  @Get('/api/random-youtube/:qty')
   getRandomYT(@Param('qty') qty: string) {
     return this.appService.getRandomYT(+qty);
   }
 
-  @Get('/init-data')
+  @Get('/api/init-data')
   getInitData() {
+    console.log(process.env.DB_HOST);
     return this.appService.getInitData();
   }
 
-  @Get('/artist/:id')
+  @Get('/api/artist/:id')
   async gatArtistData(@Param('id') id: string): Promise<IArtistData> {
     const artistsData = await this.appService.getArtistData(+id);
     const wscResult = await this.wsc.scrape(artistsData.wikipedia_suffix);
@@ -29,7 +32,7 @@ export class AppController {
     return artistsData;
   }
 
-  @Get('/release/:id')
+  @Get('/api/release/:id')
   getReleaseData(@Param('id') id: string) {
     return this.appService.getReleaseData(+id);
   }

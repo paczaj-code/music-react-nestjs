@@ -12,7 +12,6 @@ import {
 
 const Homepage = () => {
   const { dbStatistics } = useContext(AppContext);
-  console.log(dbStatistics);
   return (
     <MainLayout>
       <div className="homepage_top">

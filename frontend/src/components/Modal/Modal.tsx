@@ -26,7 +26,7 @@ const Modal = () => {
     setReleaseId,
   } = useContext(AppContext);
 
-  const { isError, isLoading, data } = useQuery<IReleaseDetails>({
+  const { data } = useQuery<IReleaseDetails>({
     queryKey: ["artistData", releaseId],
     queryFn: async () => {
       const response = await axios.get(`/release/${releaseId}`);
@@ -37,10 +37,7 @@ const Modal = () => {
     retry: 1,
     refetchOnWindowFocus: false,
   });
-  console.log(releaseId);
-  console.log(isError);
-  console.log(isLoading);
-  console.log(data && data);
+
   return (
     <>
       {/*<AnimatePresence>*/}

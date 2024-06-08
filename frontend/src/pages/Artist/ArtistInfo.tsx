@@ -29,8 +29,6 @@ const ArtistInfo: React.FC<Partial<IArtistBaseData>> = ({
   const { height: wikiInfoHeight } = wikiInfoDimensions ?? {};
   const { height: metadataHeight } = metadataDimensions ?? {};
 
-  console.log(wikiInfoHeight);
-  console.log(metadataHeight);
   // const maxHeight = isShowMore ? wikiInfoHeight : metadataHeight;
   return (
     <>

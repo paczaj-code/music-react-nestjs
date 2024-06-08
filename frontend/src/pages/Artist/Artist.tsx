@@ -24,8 +24,6 @@ const Artist = () => {
     refetchOnWindowFocus: false,
   });
 
-  console.log(data && data);
-
   if (isError) {
     return <div>error</div>;
   }

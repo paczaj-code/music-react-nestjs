@@ -1,0 +1,5 @@
+DB_USER=p1240_music
+DB_PASS=Ralf96
+DB_NAME=p1240_music
+DB_SERVER=pgsql55.mydevil.net
+DB_PORT=5432
